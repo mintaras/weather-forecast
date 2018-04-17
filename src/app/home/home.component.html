@@ -1,0 +1,44 @@
+
+<mat-tab-group [(selectedIndex)]="selectedIndex">
+  <mat-tab label="Home">
+    <ng-template mat-tab-label><mat-icon aria-label="Home">home</mat-icon></ng-template>
+    <div class="demo-tab-content">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="City" [(ngModel)]="city">
+      </mat-form-field>
+      <button mat-icon-button color="white" (click)="onSubmit()">
+        <mat-icon aria-label="Submit city">arrow_forward_ios</mat-icon>
+      </button>
+      <div *ngIf="errors.length > 0" class="errors">
+        <div *ngFor="let error of errors">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Profile">
+    <ng-template mat-tab-label><mat-icon aria-label="Profile">settings</mat-icon></ng-template>
+    <div class="demo-tab-content">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="apiKey" placeholder="API key">
+      </mat-form-field>
+    </div>
+  </mat-tab>
+  <mat-tab *ngFor="let tab of tabs" tabindex="0">
+    <ng-template mat-tab-label><strong>{{ tab.city.name }}</strong></ng-template>
+    <div class="demo-tab-content">
+      <div class="row">
+        <img class="weather-widget__img" src="http://openweathermap.org/img/w/{{ tab.city.weather[0].icon }}.png" alt="{{ tab.city.name }}" width="50" height="50">
+        <h3 class="title">{{ tab.city.weather[0].main }}</h3>
+        <div class="temp">{{ tab.city.main.temp }} &deg;C</div>
+      </div>
+      <ul class="forecast-details-list">
+        <li><div>{{ tab.city.wind.speed }}</div> m/s</li>
+        <li><div>{{ tab.city.main.humidity }}</div> humidity</li>
+        <li><div>{{ tab.city.main.pressure }}</div> pressure</li>
+        <li><div>{{ tab.city.sys.sunrise * 1000 | date: 'HH:mm' }}</div> sunrise</li>
+        <li><div>{{ tab.city.sys.sunset * 1000 | date: 'HH:mm' }}</div> sunset</li>
+      </ul>
+    </div>
+  </mat-tab>
+</mat-tab-group>

@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@include mat-core();
+$primary: mat-palette($mat-grey,50);
+$accent: mat-palette($mat-orange,200);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+input {
+  color: #fff;
+}
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #F1C40F;
+}
+.mat-form-field-ripple {
+    background-color: #fff;
+}
+.mat-form-field-underline {
+    background-color: rgba(255, 255, 255, 0.42);
+}
+.mat-form-field-label {
+    color: rgba(255, 255, 255, 0.54);
+}
+#mat-tab-content-0-0 {
+  .mat-tab-body {
+      padding: 15px;
+        background-color: #fff;
+  }
+}
+.mat-tab-body {
+    padding: 15px;
+      background-color: #4AC4ED;
+      color: #fff;
+}
+.header {
+  background-color: #F1C40F;
+  color: #fff;
+  padding: 30px 15px;
+}
+.mat-tab-header {
+  background-color: #fff;
+}
+
+.mat-form-field-wrapper {
+    margin-top: 15px;
+}
+.mat-tab-label {
+  min-width: 1px !important;
+}

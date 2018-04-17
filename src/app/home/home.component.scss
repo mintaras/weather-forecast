@@ -1,0 +1,29 @@
+
+.forecast-details-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+  li {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 14px;
+  }
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+.title {
+  margin: 0;
+  width: 70%;
+}
+.temp {
+  text-align: right;
+  width: 30%;
+  font-size: 32px;
+}
+.errors {
+    color: rgb(255,82,82);
+}
